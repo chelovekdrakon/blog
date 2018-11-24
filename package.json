@@ -6,9 +6,10 @@
   "author": "chelovekdrakon <MorauFiodar@yahoo.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon index"
+    "start": "cross-env PORT=3000 nodemon index"
   },
   "devDependencies": {
+    "cross-env": "^5.2.0",
     "eslint": "^5.9.0",
     "eslint-plugin-node": "^8.0.0"
   },
@@ -16,7 +17,10 @@
     "node": ">=6.0.0"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
-    "express": "^4.16.4"
+    "eslint-config-prettier": "^3.3.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.13"
   }
 }
