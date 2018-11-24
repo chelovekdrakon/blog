@@ -5,14 +5,16 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="/create">Add</a> <br />
+    <a href="/create">Add a bog post</a> <br />
 
     <ul>
         <% posts.forEach(function({ title, content }){ %>
             <li>
-                <%= title %> <br />
+                <b><%= title %></b> 
+                <br />
                 <%= content %>
             </li>
+            <br />
         <% }); %>
     </ul>
 </body>
