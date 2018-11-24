@@ -5,7 +5,15 @@
     <title>Document</title>
 </head>
 <body>
-    Hello !
-    <%= data %>
+    <a href="/create">Add</a> <br />
+
+    <ul>
+        <% posts.forEach(function({ title, content }){ %>
+            <li>
+                <%= title %> <br />
+                <%= content %>
+            </li>
+        <% }); %>
+    </ul>
 </body>
 </html>

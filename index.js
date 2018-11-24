@@ -1,12 +1,14 @@
-const express = require('express');
-const app = express();
+const config = require('./config');
+const app = require('./app');
+const database = require('./database');
 
-app.set('view engine', 'ejs');
+database().then(info => {
+    console.log(`Connected to ${info.host}:${info.port}/${info.name}`);
 
-const data = 'Fiodar';
-
-app.get('/', (req, res) => res.render('index', { data }));
-
-app.listen(3000, () => {
-    console.log('App si listen on port 3000');
+    app.listen(config.PORT, () => {
+        console.log(`Blog app listening on port ${config.PORT}`);
+    });
+}).catch(err => {
+    console.log('DB ERROR!');
+    console.log(err);
 });
